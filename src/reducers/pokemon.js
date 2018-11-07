@@ -7,11 +7,15 @@ export default(state={
 
     case 'GET_ALL_POKEMON':
     return {
-      url: action.pokemon,
+      basicInfo: action.pokemon,
       data: []}
 
     case 'GET_FULL_DATA':
-    return [action.fullData]
+    return {
+      basicInfo: state.basicInfo,
+      data: action.fullData
+    }
+
 
     default:
     return state

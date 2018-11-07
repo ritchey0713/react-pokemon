@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import { fetchAllPokemon } from '../actions/pokemon.js'
+import { fetchAllPokemon, getData } from '../actions/pokemon.js'
 import PokemonCard from '../components/PokemonCard.js'
-import { getData } from '../actions/pokemon.js'
 class Pokedex extends Component {
 
   componentDidMount(){
@@ -10,11 +9,13 @@ class Pokedex extends Component {
   }
 
   render(){
-    const allPokemon = this.props.pokemon
-    // this.props.pokemon.map((pokemon) => {
-    //   this.props.getData(pokemon)
-    //})
-    console.log(this.props)
+    const allPokemon = this.props.pokemon.basicInfo
+    console.log(allPokemon)
+    allPokemon.map((pokemon) => {
+      this.props.getData(pokemon)
+      console.log('should have all deep data?',this.props.pokemon.data)
+    })
+
     return(
       <div>
       hello there!

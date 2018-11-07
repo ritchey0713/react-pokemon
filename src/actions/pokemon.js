@@ -28,7 +28,7 @@ export const getData = (pokemon) => {
   return dispatch => {
     return fetch(`${pokemon.url}`)
     .then(resp => resp.json())
-    .then(fullData => console.log(fullData))
+    .then(fullData => dispatch(storeData(fullData)))
     .catch(err => console.log(err))
   }
 }
