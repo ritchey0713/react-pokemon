@@ -4,10 +4,10 @@ import { createStore,
          applyMiddleware,
          combineReducers } from 'redux';
 import thunk from 'redux-thunk'
-import heroes from './reducers/heroes'
+import pokemon from './reducers/pokemon'
 
 const reducers = combineReducers({
-  heroes
+  pokemon
 })
 
 const middleware = [thunk]

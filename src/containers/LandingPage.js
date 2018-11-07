@@ -2,7 +2,7 @@ import React,{ Component } from 'react'
 
 const LandingPage = () => (
   <div>
-    <h1>Marvel Heros, landing page</h1>
+    <h1>All Pokemon, landing page</h1>
   </div>
 )
 
