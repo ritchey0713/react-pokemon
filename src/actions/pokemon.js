@@ -7,12 +7,20 @@ const getAllPokemon = (pokemon) => {
   }
 }
 
+const storeData = fullData => {
+  return {
+      type: "GET_FULL_DATA",
+      fullData
+  }
+}
+
 
 export const fetchAllPokemon = () => {
   return dispatch => {
     return fetch(API_URL)
     .then(resp => resp.json())
     .then(pokemon => dispatch(getAllPokemon(pokemon.results)))
+
   }
 }
 
@@ -20,6 +28,7 @@ export const getData = (pokemon) => {
   return dispatch => {
     return fetch(`${pokemon.url}`)
     .then(resp => resp.json())
-    .then(pokemon => console.log(pokemon))
+    .then(fullData => console.log(fullData))
+    .catch(err => console.log(err))
   }
 }

@@ -1,20 +1,20 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import { fetchAllPokemon, getData } from '../actions/pokemon.js'
-
+import { fetchAllPokemon } from '../actions/pokemon.js'
+import PokemonCard from '../components/PokemonCard.js'
+import { getData } from '../actions/pokemon.js'
 class Pokedex extends Component {
 
   componentDidMount(){
     this.props.fetchAllPokemon()
-
   }
 
   render(){
     const allPokemon = this.props.pokemon
-    console.log(allPokemon)
-//this.props.getData(this.props.pokemon.url)
-      //console.log(this.props.pokemon)
-        {allPokemon.map(pokemon => this.props.getData(pokemon))}
+    // this.props.pokemon.map((pokemon) => {
+    //   this.props.getData(pokemon)
+    //})
+    console.log(this.props)
     return(
       <div>
       hello there!
@@ -22,9 +22,6 @@ class Pokedex extends Component {
       </div>
     )
   }
-
-
-
 }
 
 const mapStateToProps = (state) => {
