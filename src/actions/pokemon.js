@@ -17,7 +17,6 @@ export const fetchAllPokemon = () => {
 }
 
 export const getData = (pokemon) => {
-  debugger
   return dispatch => {
     return fetch(`${pokemon.url}`)
     .then(resp => resp.json())

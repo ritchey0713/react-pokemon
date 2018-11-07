@@ -10,13 +10,14 @@ class Pokedex extends Component {
   }
 
   render(){
-    const pokemon = this.props.pokemon
-    console.log(pokemon)
+    const allPokemon = this.props.pokemon
+    console.log(allPokemon)
 //this.props.getData(this.props.pokemon.url)
       //console.log(this.props.pokemon)
+        {allPokemon.map(pokemon => this.props.getData(pokemon))}
     return(
       <div>
-        hello there!
+      hello there!
 
       </div>
     )
